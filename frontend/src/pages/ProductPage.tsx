@@ -33,7 +33,7 @@ export default function ProductPage() {
   const [modalOpen, setModalOpen] = useState(false);
   const [editProduct, setEditProduct] = useState<Product | null>(null);
 
-  // 🔥 Delete confirmation state
+  //  Delete confirmation state
   const [deleteId, setDeleteId] = useState<string | null>(null);
 
   useEffect(() => {
@@ -77,11 +77,10 @@ export default function ProductPage() {
         totalPages={totalPages}
         onPageChange={(p) => dispatch(setPage(p))}
         onEdit={(p) => {
-          console.log(p);
           setEditProduct(p);
           setModalOpen(true);
         }}
-        onDelete={(id) => setDeleteId(id)} // 🔥 trigger modal
+        onDelete={(id) => setDeleteId(id)} //  trigger modal
       />
 
       {/* Add/Edit Modal */}
@@ -97,7 +96,7 @@ export default function ProductPage() {
         />
       )}
 
-      {/* 🔥 Delete Confirmation Modal */}
+      {/*  Delete Confirmation Modal */}
       {deleteId && (
         <div className="modal d-block" tabIndex={-1}>
           <div className="modal-dialog modal-dialog-centered">

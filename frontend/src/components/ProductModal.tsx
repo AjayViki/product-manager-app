@@ -30,9 +30,8 @@ export default function ProductModal({
     if (product) setForm(product);
   }, [product]);
 
-  // 🔥 Handle submit with Joi validation
+  // Handle submit with Joi validation
   const handleSubmit = () => {
-    debugger;
     const { error } = productSchema.validate(form, { abortEarly: false });
 
     if (error) {
